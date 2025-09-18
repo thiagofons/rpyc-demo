@@ -1,4 +1,5 @@
 import rpyc
+import time
 
 class MyService(rpyc.Service):
   def on_connect(self, conn):
@@ -12,9 +13,17 @@ class MyService(rpyc.Service):
     return 42
   
   def exposed_sum_vector(self, vector: list[int]): 
+    start = time.time()
+
     sum_val = 0
     for item in vector:
         sum_val += item
+
+    end = time.time()
+
+    elapsed_time = end - start
+    print(f"{elapsed_time:.2f}")
+
     return sum_val
 
   exposed_the_real_answer_though = 43 
