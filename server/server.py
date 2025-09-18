@@ -2,6 +2,7 @@ import rpyc
 
 class MyService(rpyc.Service):
   def on_connect(self, conn):
+    print("CONECTADO: ", conn)
     pass
 
   def on_disconnect(self, conn):

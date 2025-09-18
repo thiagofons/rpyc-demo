@@ -9,4 +9,4 @@ server = sys.argv[1]
 
 conn = rpyc.connect(server,18861)
 
-print(conn.get_question)
+print(conn.root.exposed_get_answer())
