@@ -9,4 +9,8 @@ server = sys.argv[1]
 
 conn = rpyc.connect(server,18861)
 
-print(conn.root.exposed_get_answer())
+n = int(input("Insira o numero de posições do vetor: "))
+
+vector = [i for i in range(0, n)]
+
+print(conn.root.sum_vector(vector))

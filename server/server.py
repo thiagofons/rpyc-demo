@@ -10,6 +10,12 @@ class MyService(rpyc.Service):
 
   def exposed_get_answer(self): 
     return 42
+  
+  def exposed_sum_vector(self, vector: list[int]): 
+    sum_val = 0
+    for item in vector:
+        sum_val += item
+    return sum_val
 
   exposed_the_real_answer_though = 43 
   
